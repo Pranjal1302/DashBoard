@@ -3,10 +3,12 @@ import React ,{ useEffect } from 'react';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import {FiSettings } from 'react-icons/fi';
 import {TooltipComponent} from '@syncfusion/ej2-react-popups';
+import {Navbar,Footer,Sidebar,ThemeSettings} from './components';
+import {Ecommerce,Orders,Employees,Customer,Editor,Calendar,Line,Area,Bar,Pie,Colorpicker,Stacked,Kanban} from './pages';
 
 
 function App() {
-  const activeMenu = false;
+  const activeMenu = true ;
   return (
     <div>
       <Router>
@@ -20,11 +22,11 @@ function App() {
           </div>
           {activeMenu ? (
             <div className='w-72 fixed sidebar dark:bg-secondary-dark-bg bg-white'>
-              sidebar
+              <Sidebar />
             </div>
           ):(
             <div className='w-0 dark:bg-secondary-dark-bg'>
-              sidebar
+              <Sidebar />
             </div>
           )
           }
@@ -32,24 +34,23 @@ function App() {
             activeMenu ? 'dark:bg-main-bg bg-main-bg min-h-screen md:ml-72 w-full' : 'dark:bg-main-bg bg-main-bg min-h-screen flex-2 w-full'
           }>
              <div className='fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full'>
-              navbar
+              <Navbar />
               </div>
             </div>
             <div>
               <Routes>
-                <Route path= "/" element= "Ecommerce" />
-                <Route path= "/ecommerce" element= "Ecommerce" />
-                <Route path= "/orders" element= "Orders" />
-                <Route path= "/employees" element= "Employees" />
-                <Route path= "/customers" element= "Customers" />
-                <Route path= "/kanbar" element= "Kanbar" />
-                <Route path= "/editor" element= "Editor" />
-                <Route path= "/calendar" element= "Calendar" />
-                <Route path= "/line" element= "Line" />
-                <Route path= "/area" element= "Area" />
-                <Route path= "/bar" element= "Bar" />
-                <Route path= "/pie" element= "Pie" />
-                <Route path= "/pie" element= "Pie" />
+                <Route path= "/" element= {<Ecommerce />} />
+                <Route path= "/Ecommerce" element= {<Ecommerce />} />
+                <Route path= "/Orders" element= {<Orders />} />
+                <Route path= "/Employees" element= {<Employees />} />
+                <Route path= "/Customer" element= {<Customer />} />
+                <Route path= "/Kanban" element= {<Kanban />} />
+                <Route path= "/Editor" element= {<Editor />} />
+                <Route path= "/Calendar" element= {<Calendar />} />
+                <Route path= "/Line" element= {<Line />} />
+                <Route path= "/Area" element= {<Area />} />
+                <Route path= "/Bar" element= {<Bar />} />
+                <Route path= "/Pie" element= {<Pie />} />
               </Routes>
             </div>
           </div>
