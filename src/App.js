@@ -5,10 +5,11 @@ import {FiSettings } from 'react-icons/fi';
 import {TooltipComponent} from '@syncfusion/ej2-react-popups';
 import {Navbar,Footer,Sidebar,ThemeSettings} from './components';
 import {Ecommerce,Orders,Employees,Customer,Editor,Calendar,Line,Area,Bar,Pie,Colorpicker,Stacked,Kanban} from './pages';
+import {useStateContext} from './context/ContextProvider';
 
-
-function App() {
-  const activeMenu = true ;
+const App = () => {
+  const {activeMenu} = useStateContext();
+  // const activeMenu = true ;
   return (
     <div>
       <Router>
